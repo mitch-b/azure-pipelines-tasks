@@ -1,0 +1,50 @@
+{
+    "id": "00C44103-CDB8-4153-AA51-E4C56AA622AE",
+    "name": "AzureBicepToolInstaller",
+    "friendlyName": "Install Azure Bicep",
+    "description": "Install Azure Bicep",
+    "helpUrl": "https://github.com/Azure/bicep",
+    "helpMarkDown": "[Learn more about this task](https://github.com/Azure/bicep)",
+    "category": "Tool",
+    "visibility": [
+        "Build",
+        "Release"
+    ],
+    "author": "Mitchell Barry",
+    "version": {
+        "Major": 0,
+        "Minor": 1,
+        "Patch": 0
+    },
+    "preview": true,
+    "demands": [],
+    "satisfies": [
+        "bicep"
+    ],
+    "groups": [],
+    "inputs": [
+        {
+            "name": "version",
+            "label": "Version",
+            "type": "string",
+            "helpMarkDown": "Specify the version of Azure Bicep tools to install. Ex:<br><br>v0.1.226-alpha<br>0.1.223-alpha<br>latest",
+            "defaultValue": "latest"
+        }
+    ],
+    "instanceNameFormat": "Install Azure Bicep - $(version)",
+    "execution": {
+        "Node": {
+            "target": "src/azurebiceptoolinstaller.js"
+        }
+    },
+    "messages": {
+        "ErrorFetchingLatestVersion": "An error occured while fetching the latest version info from %s. Error: %s. Downloading default stable version: %s.",
+        "FindingLatestAzureBicepVersion": "Finding latest Azure Bicep version...",
+        "AzureBicepDownloadFailed": "Failed to download Azure Bicep from location %s. Error %s.",
+        "LatestAzureBicepVersion": "Latest version is %s",
+        "NotAValidSemverVersion": "Version not specified in correct format. Ex: 0.1.226-alpha, v0.1.226-alpha, latest",
+        "SuccessfullyDownloaded": "Successfully downloaded Azure Bicep %s. Download path: %s.",
+        "VerifyingAzureBicepInstallation": "Verifying Azure Bicep installation...",
+        "VersionAlreadyInstalled": "Azure Bicep version %s is already installed. Installation path: %s."
+    }
+}

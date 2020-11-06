@@ -1,0 +1,16 @@
+{
+  "loc.friendlyName": "Install Azure Bicep",
+  "loc.helpMarkDown": "[Learn more about this task](https://github.com/Azure/bicep)",
+  "loc.description": "Install Azure Bicep",
+  "loc.instanceNameFormat": "Install Azure Bicep - $(version)",
+  "loc.input.label.version": "Version",
+  "loc.input.help.version": "Specify the version of Azure Bicep to install. Ex:<br><br>0.1.226-alpha<br>v0.1.226-alpha<br>latest",
+  "loc.messages.ErrorFetchingLatestVersion": "An error occured while fetching the latest version info from %s. Error: %s. Downloading default stable version: %s.",
+  "loc.messages.FindingLatestAzureBicepVersion": "Finding latest Azure Bicep version...",
+  "loc.messages.AzureBicepDownloadFailed": "Failed to download Azure Bicep from location %s. Error %s.",
+  "loc.messages.LatestAzureBicepVersion": "Latest version is %s",
+  "loc.messages.NotAValidSemverVersion": "Version not specified in correct format. Ex: 0.1.226-alpha, v0.1.226-alpha, latest",
+  "loc.messages.SuccessfullyDownloaded": "Successfully downloaded Azure Bicep %s. Download path: %s.",
+  "loc.messages.VerifyingAzureBicepInstallation": "Verifying Azure Bicep installation...",
+  "loc.messages.VersionAlreadyInstalled": "Azure Bicep version %s is already installed. Installation path: %s."
+}

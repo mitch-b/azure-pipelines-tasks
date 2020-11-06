@@ -1,0 +1,50 @@
+{
+  "id": "00C44103-CDB8-4153-AA51-E4C56AA622AE",
+  "name": "AzureBicepToolInstaller",
+  "friendlyName": "ms-resource:loc.friendlyName",
+  "description": "ms-resource:loc.description",
+  "helpUrl": "https://github.com/Azure/bicep",
+  "helpMarkDown": "ms-resource:loc.helpMarkDown",
+  "category": "Tool",
+  "visibility": [
+    "Build",
+    "Release"
+  ],
+  "author": "Mitchell Barry",
+  "version": {
+    "Major": 0,
+    "Minor": 1,
+    "Patch": 0
+  },
+  "preview": true,
+  "demands": [],
+  "satisfies": [
+    "bicep"
+  ],
+  "groups": [],
+  "inputs": [
+    {
+      "name": "version",
+      "label": "ms-resource:loc.input.label.version",
+      "type": "string",
+      "helpMarkDown": "ms-resource:loc.input.help.version",
+      "defaultValue": "latest"
+    }
+  ],
+  "instanceNameFormat": "ms-resource:loc.instanceNameFormat",
+  "execution": {
+    "Node": {
+      "target": "src/azurebiceptoolinstaller.js"
+    }
+  },
+  "messages": {
+    "ErrorFetchingLatestVersion": "ms-resource:loc.messages.ErrorFetchingLatestVersion",
+    "FindingLatestAzureBicepVersion": "ms-resource:loc.messages.FindingLatestAzureBicepVersion",
+    "AzureBicepDownloadFailed": "ms-resource:loc.messages.AzureBicepDownloadFailed",
+    "LatestAzureBicepVersion": "ms-resource:loc.messages.LatestAzureBicepVersion",
+    "NotAValidSemverVersion": "ms-resource:loc.messages.NotAValidSemverVersion",
+    "SuccessfullyDownloaded": "ms-resource:loc.messages.SuccessfullyDownloaded",
+    "VerifyingAzureBicepInstallation": "ms-resource:loc.messages.VerifyingAzureBicepInstallation",
+    "VersionAlreadyInstalled": "ms-resource:loc.messages.VersionAlreadyInstalled"
+  }
+}
