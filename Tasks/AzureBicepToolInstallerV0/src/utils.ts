@@ -58,6 +58,7 @@ async function downloadAzureBicepToolInternal(version: string): Promise<string> 
     
     if (!cachedToolpath) {
         const downloadUrl = getDownloadUrl(version);
+
         let downloadPath;
         try {
             downloadPath = await toolLib.downloadTool(downloadUrl);
@@ -66,15 +67,15 @@ async function downloadAzureBicepToolInternal(version: string): Promise<string> 
             throw new Error(tl.loc('AzureBicepDownloadFailed', downloadUrl, ex));
         }
         
-        cachedToolpath = await toolLib.cacheDir(downloadPath, bicepToolName, version);
+        cachedToolpath = await toolLib.cacheFile(downloadPath, bicepToolName + getExecutableExtension(), bicepToolName, version);
         console.log(tl.loc("SuccessfullyDownloaded", version, cachedToolpath));
     } else {
         console.log(tl.loc("VersionAlreadyInstalled", version, cachedToolpath));
     }
 
-    const funcPath = path.join(cachedToolpath, bicepToolName + getExecutableExtension());
-    fs.chmodSync(funcPath, '777');
-    return funcPath;
+    const bicepPath = path.join(cachedToolpath, bicepToolName + getExecutableExtension());
+    fs.chmodSync(bicepPath, '777');
+    return bicepPath;
 }
 
 function getExecutableExtension(): string {
